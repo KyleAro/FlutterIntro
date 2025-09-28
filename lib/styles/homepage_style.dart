@@ -15,7 +15,7 @@ AppBarTheme customAppBarTheme = AppBarTheme(
   titleTextStyle: titleTextStyle,      
 );
 
-Color scaffoldBackgroundColor =  const Color.fromARGB(255, 43, 41, 34);  
+Color scaffoldBackgroundColor =  const Color.fromARGB(255, 225, 203, 59);  
 
 
 TextStyle getTitleTextStylez(BuildContext context) {
