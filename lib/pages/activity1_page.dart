@@ -19,13 +19,13 @@ class ActivityPage extends StatelessWidget {
           title: Center(
             child: Text(
               'music player'.toUpperCase(),
-              style: getTitleTextStyle(context).copyWith(fontSize: 16,)
+              style: getTitleTextStyle(context).copyWith(fontSize: 25)
               
             ),
           ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            color: const Color.fromARGB(255, 255, 203, 59),
+            color: const Color.fromARGB(255, 240, 238, 238),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -33,7 +33,7 @@ class ActivityPage extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(Icons.favorite),
-              color: const Color.fromARGB(255, 255, 203, 59),
+              color: const Color.fromARGB(255, 240, 238, 238),
               onPressed: () {
                 // Handle favorite button press
               },

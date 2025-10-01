@@ -12,21 +12,21 @@ AppBarTheme customAppBarTheme = AppBarTheme(
 
 
 
-Color scaffoldBackgroundColor =  const Color.fromARGB(255, 255, 203, 59);  
+Color scaffoldBackgroundColor =  const Color.fromARGB(255, 34, 34, 32);  
 
 
 
 TextStyle titleTextStyle = TextStyle(
   fontSize: 50,
   
-  color: Colors.black,
+  color: const Color.fromARGB(255, 240, 238, 238),
 );
 
 
 TextStyle getTitleTextStyle(BuildContext context) {
   return GoogleFonts.quicksand(
     fontWeight: FontWeight.w600,
-    color: const Color.fromARGB(255, 255, 203, 59),
+    color: const Color.fromARGB(255, 238, 237, 233),
     letterSpacing: 10.0,
     
   );

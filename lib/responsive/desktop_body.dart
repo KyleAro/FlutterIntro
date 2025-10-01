@@ -13,7 +13,6 @@ class MyDesktopBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
 
-      // APP BAR FOR MOBILE 
       appBar: AppBar(
         backgroundColor: customAppBarTheme.backgroundColor,
         title: Center(
@@ -24,7 +23,7 @@ class MyDesktopBody extends StatelessWidget {
         ),
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          color: const Color.fromARGB(255, 255, 203, 59),
+          color: const Color.fromARGB(255, 240, 238, 238),
           onPressed: () {
             // Handle menu button press
           },
@@ -32,7 +31,7 @@ class MyDesktopBody extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.favorite),
-            color: const Color.fromARGB(255, 255, 203, 59),
+            color: const Color.fromARGB(255, 240, 238, 238),
             onPressed: () {
               // Handle favorite button press
             },
@@ -42,7 +41,7 @@ class MyDesktopBody extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0, bottom: 10.0),
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           children: <Widget>[
             SizedBox(
               width: 400.0,
@@ -80,10 +79,10 @@ class MyDesktopBody extends StatelessWidget {
 Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
   final screenWidth = MediaQuery.of(context).size.width;
 
-  double iconSize = screenWidth < 500 ? 50 : 70;
-  double fontSize = screenWidth < 500 ? 18 : 22;
+  double iconSize = screenWidth < 600 ? 50 : 70;
+  double fontSize = screenWidth < 600 ? 18 : 22;
 
-  return Container(
+   return Container(
     decoration: BoxDecoration(
       boxShadow: [
         BoxShadow(
@@ -107,7 +106,7 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 24.0),
       ),
       onPressed: () {
         Navigator.push(
@@ -116,26 +115,35 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
         );
       },
 
-      // Aligns the icon and text to the center
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center, // Centers the children
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            size: iconSize,
-            color: const Color.fromARGB(255, 255, 203, 59),
-          ),
-          SizedBox(width: 10), // Adds spacing between icon and text
-          Text(
-            label.toUpperCase(),
-            style: getTitleTextStylez(context).copyWith(
-              fontSize: fontSize,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, 
+          crossAxisAlignment: CrossAxisAlignment.center, 
+          
+          
+          children: [
+           Transform.translate(
+              offset: const Offset(10.0, 0), 
+              child: Icon(
+                icon,
+                size: iconSize,
+                color: const Color.fromARGB(255, 236, 235, 233),
+              ),
             ),
-            textAlign: TextAlign.center, // Ensures text is centered
-          ),
-        ],
+            Transform.translate(
+              offset: const Offset(10,0), 
+              child: Text(
+                label,
+                style: getTitleTextStylez(context).copyWith(
+                  fontSize: fontSize,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     ),
   );
 }
+

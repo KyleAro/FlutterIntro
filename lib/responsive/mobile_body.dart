@@ -13,7 +13,6 @@ class MyMobileBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
 
-      // APP BAR FOR MOBILE 
       appBar: AppBar(
         backgroundColor: customAppBarTheme.backgroundColor,
         title: Center(
@@ -24,7 +23,7 @@ class MyMobileBody extends StatelessWidget {
         ),
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          color: const Color.fromARGB(255, 255, 203, 59),
+          color: const Color.fromARGB(255, 240, 238, 238),
           onPressed: () {
             // Handle menu button press
           },
@@ -32,7 +31,7 @@ class MyMobileBody extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.favorite),
-            color: const Color.fromARGB(255, 255, 203, 59),
+            color: const Color.fromARGB(255, 240, 238, 238),
             onPressed: () {
               // Handle favorite button press
             },
@@ -87,15 +86,15 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
     decoration: BoxDecoration(
       boxShadow: [
         BoxShadow(
-          color: const Color.fromARGB(138, 2, 2, 2).withOpacity(1),
+          color: const Color.fromARGB(255, 31, 30, 31).withOpacity(1),
           spreadRadius: 1,
-          blurRadius: 1,
+          blurRadius: 5,
           offset: const Offset(4, 4),
         ),
         const BoxShadow(
-          color: Color.fromARGB(255, 0, 39, 76),
+          color: Color.fromARGB(74, 148, 148, 143),
           spreadRadius: 1,
-          
+          blurRadius: 5,
           offset: Offset(-4, -4),
         ),
       ],
@@ -107,7 +106,7 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 24.0),
       ),
       onPressed: () {
         Navigator.push(
@@ -115,27 +114,33 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
           MaterialPageRoute(builder: (_) => page),
         );
       },
-
-      // Aligns the icon and text to the center
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center, // Centers the children
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            size: iconSize,
-            color: const Color.fromARGB(255, 255, 203, 59),
-          ),
-          SizedBox(width: 10), // Adds spacing between icon and text
-          Text(
-            label.toUpperCase(),
-            style: getTitleTextStylez(context).copyWith(
-              fontSize: fontSize,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Transform.translate(
+              offset: const Offset(10.0, 0), 
+              child: Icon(
+                icon,
+                size: iconSize,
+                color: const Color.fromARGB(255, 236, 235, 233),
+              ),
             ),
-            textAlign: TextAlign.center, // Ensures text is centered
-          ),
-        ],
+           Transform.translate(
+              offset: const Offset(10,0), 
+              child: Text(
+                label,
+                style: getTitleTextStylez(context).copyWith(
+                  fontSize: fontSize,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+          ],
+        ),
       ),
     ),
   );
 }
+
