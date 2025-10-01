@@ -1,47 +1,28 @@
 import 'package:flutter/material.dart';
 import '../styles/musicplayer_style.dart'; 
-
+import 'package:genesis/responsive/responsive_layout.dart';
+import 'act_1responsive/act_1mobile.dart';
+import 'act_1responsive/act_1desktop.dart';
 
 class ActivityPage extends StatelessWidget {
   final String title;
 
   const ActivityPage({super.key, required this.title});
 
-  @override
+
    @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: scaffoldBackgroundColor,  
-        appBar: AppBar(
-          backgroundColor: customAppBarTheme.backgroundColor,  
-          title: Center(
-            child: Text(
-              'music player'.toUpperCase(),
-              style: getTitleTextStyle(context).copyWith(fontSize: 25)
-              
-            ),
-          ),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            color: const Color.fromARGB(255, 240, 238, 238),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.favorite),
-              color: const Color.fromARGB(255, 240, 238, 238),
-              onPressed: () {
-                // Handle favorite button press
-              },
-            ),
-          ],
-        ), 
+        
+        body: ResponsiveLayout(
+          mobileBody: Act_1Mobile(),  
+          desktopBody: Act_1Desktop(),  
+        ),
            ),
-         
+    
     );
   }
 }
