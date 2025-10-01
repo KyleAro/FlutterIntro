@@ -12,7 +12,7 @@ AppBarTheme customAppBarTheme = AppBarTheme(
 
 
 
-Color scaffoldBackgroundColor =  const Color.fromARGB(255, 34, 34, 32);  
+Color scaffoldBackgroundColor =  const Color.fromARGB(255, 0, 39, 76);  
 
 
 

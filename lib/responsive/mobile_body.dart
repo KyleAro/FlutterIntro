@@ -86,13 +86,13 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
     decoration: BoxDecoration(
       boxShadow: [
         BoxShadow(
-          color: const Color.fromARGB(255, 31, 30, 31).withOpacity(1),
+          color: const Color.fromARGB(141, 11, 11, 12).withOpacity(1),
           spreadRadius: 1,
-          blurRadius: 5,
+          blurRadius: 6,
           offset: const Offset(4, 4),
         ),
         const BoxShadow(
-          color: Color.fromARGB(74, 148, 148, 143),
+          color: Color.fromARGB(118, 208, 211, 214),
           spreadRadius: 1,
           blurRadius: 5,
           offset: Offset(-4, -4),
@@ -114,18 +114,28 @@ Widget buttons(BuildContext context, IconData icon, String label, Widget page) {
           MaterialPageRoute(builder: (_) => page),
         );
       },
+
+
+      // this thingy is alignment of the icon and text
+
+
       child: Center(
+
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: [
+          children: 
+          [
             Transform.translate(
               offset: const Offset(10.0, 0), 
               child: Icon(
                 icon,
                 size: iconSize,
-                color: const Color.fromARGB(255, 236, 235, 233),
+                color: const Color.
+                fromARGB(255, 236, 235, 233),
               ),
             ),
+
+
            Transform.translate(
               offset: const Offset(10,0), 
               child: Text(
