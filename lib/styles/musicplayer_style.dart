@@ -17,6 +17,7 @@ TextStyle titleTextStyle = TextStyle(
 
 TextStyle getTitleTextStyle(BuildContext context) {
   return GoogleFonts.quicksand(
+    
     fontWeight: FontWeight.w600,
     color: const Color.fromARGB(255, 255, 255, 255),
     letterSpacing: 10.0,
